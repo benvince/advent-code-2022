@@ -14,17 +14,17 @@ def day_2_1():
 
     score = 0
     for x in get_data():
-        # Draw
-        if SHAPE_POINTS[x[0]] == SHAPE_POINTS[x[1]]:
-            score += SHAPE_POINTS[x[0]] + 3
         # Win
-        elif SHAPE_DEFEATS[x[0]] == x[1]:
-            score += SHAPE_POINTS[x[0]] + 6
-        # Loose
+        if SHAPE_DEFEATS[x[0]] == x[1]:
+            score += SHAPE_POINTS[x[1]] 
+        # Draw
+        elif SHAPE_POINTS[x[0]] == SHAPE_POINTS[x[1]]:
+            score += SHAPE_POINTS[x[1]] + 3
+        # Lose
         else:
-            score += SHAPE_POINTS[x[0]]
+            score += SHAPE_POINTS[x[1]] + 6 
 
     return score
 
 
-print(f"Solution 2 Answer: {day_2_1()}.")
+print(f"Solution 1 Answer: {day_2_1()}.")
