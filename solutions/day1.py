@@ -1,16 +1,10 @@
-from typing import List
-
 SOLUTION_DATA = 'data/day1'
 
-def get_cals() -> List[int]:
+def get_cals():
 
     data_groups = open(SOLUTION_DATA).read().split("\n\n")
 
-    output = []
-    for grp in data_groups:
-        output.append([int(x) for x in grp.split("\n") if not x == ""])
-
-    return output
+    return [[int(x) for x in grp.split("\n")] for grp in data_groups]
 
 def day_1_1():
 
