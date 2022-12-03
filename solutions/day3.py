@@ -13,13 +13,9 @@ def day_3_1():
 
     score = 0 
     for row in get_data():
-        first_half = row[:len(row)//2]
-        second_half = row[len(row)//2:]
 
-        for c in first_half:
-            if c in second_half:
-                score += LETTERS.find(c)+1
-                break
+        common = set.intersection(*map(set,[row[:len(row)//2], row[len(row)//2:]]))
+        score += LETTERS.find(common.pop())+1
 
     return score
 
