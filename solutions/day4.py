@@ -16,4 +16,18 @@ def day_4_1():
 
     return score
 
+def day_4_2():
+
+    data = utils.get_data(SOLUTION_DATA)
+
+    score = 0 
+    for row in data:
+        rng1 = set(range(int(row.split(",")[0].split("-")[0]), int(row.split(",")[0].split("-")[1])+1))
+        rng2 = set(range(int(row.split(",")[1].split("-")[0]), int(row.split(",")[1].split("-")[1])+1))
+
+        if rng1.intersection(rng2):
+            score += 1
+    return score
+
 print(f"Solution 1 Answer: {day_4_1()}.")
+print(f"Solution 2 Answer: {day_4_2()}.")
